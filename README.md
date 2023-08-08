@@ -1,0 +1,3 @@
+#Dominic Juan Pablo Ruano Perez
+##202200075
+###LABORATORIO LENGUAJES FORMALES Y DE PROGRAMACION Sección B-

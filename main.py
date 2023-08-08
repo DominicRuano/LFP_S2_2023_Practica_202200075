@@ -20,14 +20,26 @@ def get_mov():
             temp = linea.split(" ")
             temp2 = temp[1].split(";")
             lista_mov.append(temp2)
+        elif "vender_producto" in linea:
+            temp = linea.split(" ")
+            temp2 = temp[1].split(";")
+            lista_mov2.append(temp2)
         linea = archivo.readline().strip()
-    
 
     for a in lista:
         for b in lista_mov:
             if a[0] == b[0]:
                 if a[3] == b[2]:
                     a[1] = float(a[1]) + float(b[1])
+                else:
+                    print("Error: el producto no existe en esa ubicacion.")
+        for b in lista_mov2:
+            if a[0] == b[0]:
+                if a[3] == b[2]:
+                    if float(a[1]) >= float(b[1]):
+                        a[1] = float(a[1]) - float(b[1])
+                    else:
+                        print("Error: El producto existente es menos a la cantidad que se desea vender.")
                 else:
                     print("Error: el producto no existe en esa ubicacion.")
 
@@ -89,6 +101,7 @@ titulo = "practica 1 - lenguajes formales de programacion"
 path_inv = None
 lista = [] # lista de listas sintaxis: [[],[],[nombre, cantidad, precio, bodega]]
 lista_mov = [] # lista de listas sintaxis: [[],[],[nombre, cantidad, bodega]]
+lista_mov2 = [] # misma sintaxis que la anterior
 
 #Main
 if __name__ == "__main__":

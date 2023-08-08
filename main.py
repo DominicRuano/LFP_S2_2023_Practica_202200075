@@ -10,7 +10,29 @@ def get_inf():
     print("Creando informe...")
 
 def get_mov():
-    print("get mov")
+    print("obteniento movimientos:")
+    path_mov = get_path()
+    archivo = open(path_mov, "r")
+    
+    linea = archivo.readline().strip()
+    while linea:
+        if "agregar_stock" in linea:
+            temp = linea.split(" ")
+            temp2 = temp[1].split(";")
+            lista_mov.append(temp2)
+        linea = archivo.readline().strip()
+    
+
+    for a in lista:
+        for b in lista_mov:
+            if a[0] == b[0]:
+                if a[3] == b[2]:
+                    a[1] = float(a[1]) + float(b[1])
+                else:
+                    print("Error: el producto no existe en esa ubicacion.")
+
+    print(lista)
+    archivo.close()
 
 def get_inv():
     print("obteniento inventario:")
@@ -25,10 +47,11 @@ def get_inv():
             lista.append(temp2)
         
         linea = archivo.readline().strip()
-    print(lista)
+    #print(lista)
+    archivo.close()
 
 def get_path():
-    path = filedialog.askopenfile(title="Select file",filetypes=(("inv files", ".inv"),("all files", ".*")))
+    path = filedialog.askopenfile(title="Select file",filetypes=(("inv files", ".inv"),("mov files", "mov"),("all files", ".*")))
     print("El path es: {}".format(path.name))
     if input("¿Esta seguro que ese es el archivo correcto? (s/n): ").lower() == "s":
         return path.name
@@ -53,19 +76,19 @@ def main():
     if opcion == 1:
         get_inv()
     elif opcion == 2:
-        pass
+        get_mov()
     elif opcion == 3:
         pass
     elif opcion == 4:
         pass
     else:
-        pass
+        print("Ingrese una opcion valida.")
 
 #Variables
 titulo = "practica 1 - lenguajes formales de programacion"
 path_inv = None
-lista = [] # lsita de listas sintaxis: [[],[],[nombre, cantidad, precio, bodega]]
-#Nombre = []
+lista = [] # lista de listas sintaxis: [[],[],[nombre, cantidad, precio, bodega]]
+lista_mov = [] # lista de listas sintaxis: [[],[],[nombre, cantidad, bodega]]
 
 #Main
 if __name__ == "__main__":

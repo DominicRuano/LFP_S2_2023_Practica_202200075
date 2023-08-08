@@ -1,0 +1,9 @@
+Informe de inventario: 
+
+
+Producto        Cantidad        Precion Unitario        Valor Total        Ubicacion
+---------------------------------------------------------------------------------------
+Manzanas        100             2.50                    250.0              BodegaA            
+Peras           50              3.00                    150.0              BodegaB            
+Platanos        75              1.75                    131.25             BodegaC            
+Chocolate       10              12.00                   120.0              BodegaA            

@@ -8,6 +8,25 @@ def default():
 
 def get_inf():
     print("Creando informe...")
+    archivo = open("informe.txt", "w")
+    archivo.write("Informe de inventario: ")
+    archivo.write("\n\n\n")
+    archivo.write("Producto        Cantidad        Precion Unitario        Valor Total        Ubicacion\n")
+    archivo.write("---------------------------------------------------------------------------------------\n")
+
+    for a in lista:
+        archivo.write(a[0])
+        archivo.write((16 - len(a[0])) * " ")
+        archivo.write(a[1])
+        archivo.write((16 - len(a[1])) * " ")
+        archivo.write(a[2])
+        archivo.write((24 - len(a[2])) * " ")
+        archivo.write(str(float(a[1]) * float(a[2]))) # :))))
+        archivo.write((18 - len(str(float(a[1]) - float(a[2])))) * " ")
+        archivo.write(a[3])
+        archivo.write((19 - len(a[3])) * " ")
+        archivo.write("\n")
+
 
 def get_mov():
     print("obteniento movimientos:")
@@ -90,7 +109,7 @@ def main():
     elif opcion == 2:
         get_mov()
     elif opcion == 3:
-        pass
+        get_inf()
     elif opcion == 4:
         pass
     else:

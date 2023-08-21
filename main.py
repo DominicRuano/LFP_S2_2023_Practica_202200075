@@ -13,7 +13,7 @@ def get_inf():
     archivo = open("informe.txt", "w")
     archivo.write("Informe de inventario: ")
     archivo.write("\n\n\n")
-    archivo.write("Producto        Cantidad        Precion Unitario        Valor Total        Ubicacion\n")
+    archivo.write("Producto        Cantidad        Precio Unitario        Valor Total        Ubicacion\n")
     archivo.write("---------------------------------------------------------------------------------------\n")
 
     for a in lista:
@@ -124,7 +124,6 @@ lista_mov = [] # lista de listas sintaxis: [[],[],[nombre, cantidad, bodega]]
 lista_mov2 = [] # misma sintaxis que la anterior
 
 #Main
-if __name__ == "__main__":
-    os.system("cls")
-    while True:
-        main()
+os.system("cls")
+while True:
+    main()

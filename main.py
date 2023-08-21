@@ -4,9 +4,11 @@ from tkinter import filedialog
 
 #Funciones
 def default():
+    os.system("cls")
     print("Opcion no valida")
 
 def get_inf():
+    os.system("cls")
     print("Creando informe...")
     archivo = open("informe.txt", "w")
     archivo.write("Informe de inventario: ")
@@ -15,20 +17,21 @@ def get_inf():
     archivo.write("---------------------------------------------------------------------------------------\n")
 
     for a in lista:
-        archivo.write(a[0])
-        archivo.write((16 - len(a[0])) * " ")
-        archivo.write(a[1])
-        archivo.write((16 - len(a[1])) * " ")
-        archivo.write(a[2])
-        archivo.write((24 - len(a[2])) * " ")
-        archivo.write(str(float(a[1]) * float(a[2]))) # :))))
+        archivo.write(str(a[0]))
+        archivo.write((16 - len(str(a[0]))) * " ")
+        archivo.write(str(a[1]))
+        archivo.write((16 - len(str(a[1]))) * " ")
+        archivo.write(str(a[2]))
+        archivo.write((24 - len(str(a[2]))) * " ")
+        numero = "{:.2f}".format(float(a[1]) * float(a[2]))
+        archivo.write(str(numero))
         archivo.write((18 - len(str(float(a[1]) - float(a[2])))) * " ")
-        archivo.write(a[3])
-        archivo.write((19 - len(a[3])) * " ")
+        archivo.write(str(a[3]))
+        archivo.write((19 - len(str(a[3]))) * " ")
         archivo.write("\n")
 
-
 def get_mov():
+    os.system("cls")
     print("obteniento movimientos:")
     path_mov = get_path()
     archivo = open(path_mov, "r")
@@ -51,21 +54,20 @@ def get_mov():
                 if a[3] == b[2]:
                     a[1] = float(a[1]) + float(b[1])
                 else:
-                    print("Error: el producto no existe en esa ubicacion.")
+                    print("Error: el producto {} no existe en esa ubicacion {}.".format(a[0], a[3]))
         for b in lista_mov2:
             if a[0] == b[0]:
                 if a[3] == b[2]:
                     if float(a[1]) >= float(b[1]):
                         a[1] = float(a[1]) - float(b[1])
                     else:
-                        print("Error: El producto existente es menos a la cantidad que se desea vender.")
+                        print("Error: El producto {} existente es menor a la cantidad que se desea vender.".format(a[0]))
                 else:
-                    print("Error: el producto no existe en esa ubicacion.")
-
-    print(lista)
+                    print("Error: el producto {} no existe en la ubicacion {}.".format(a[0], a[3]))
     archivo.close()
 
 def get_inv():
+    os.system("cls")
     print("obteniento inventario:")
     path_inv = get_path()
     archivo = open(path_inv, "r")
@@ -78,7 +80,6 @@ def get_inv():
             lista.append(temp2)
         
         linea = archivo.readline().strip()
-    #print(lista)
     archivo.close()
 
 def get_path():
@@ -111,7 +112,7 @@ def main():
     elif opcion == 3:
         get_inf()
     elif opcion == 4:
-        pass
+        os.system("taskkill /F /PID %d" % os.getpid())
     else:
         print("Ingrese una opcion valida.")
 

@@ -85,4 +85,4 @@ ___
 
 >*   Muchas gracias eso seria todo
     gracias por leer todo este documento tenga un buen dia aux.
-<img src="https://i.ibb.co/nB08qk2/1ac04daf-e3d7-4dbd-8c43-8877808ec602.jpg" alt="funcion main" style="width:100px;"/>
+<img src="https://i.ibb.co/nB08qk2/1ac04daf-e3d7-4dbd-8c43-8877808ec602.jpg" alt="funcion main" style="width:200px;"/>

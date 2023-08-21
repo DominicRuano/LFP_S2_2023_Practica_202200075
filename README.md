@@ -50,32 +50,39 @@ ___
 >*   Funcion Main()
     esta funcion se encarga de imprimir el menu, y decidir si se decea agregar un inventario, movimientos entre otros.
 <img src="https://i.ibb.co/FKMV3zd/code.png" alt="funcion main" style="width:500px;"/>
+
 ---
- 
+
 >*   Funcion get_path()
     se encarga de obtener el path del archivo que deseamos leer, tanto del archivo .inv como el .mov
 <img src="https://i.ibb.co/KhywGk7/code2.png" alt="funcion main" style="width:500px;"/>
+
 ---
 
 >*   Funcion Default()
     Funcion encargada unicamente para reanudad el bucle y regresar al menu en caso que se ingrese un valor no permitido o fuera de rango.
 <img src="https://i.ibb.co/4Z36BJL/code6.png" alt="funcion main" style="width:600px;"/>
+
 ---
 
 >*   Funcion Get_info()
     Encargada de generar el archivo de reporte.txt
 <img src="https://i.ibb.co/S73dTHz/code5.png" alt="funcion main" style="width:500px;"/>
+
 ---
- 
+
 >*   Funcion inv()
     Funcion principal del sistema donde se hace lectura del archivo .inv y se crea un inventario en la memoria temporal.
 <img src="https://i.ibb.co/Jyg8yy9/code3.png" alt="funcion main" style="width:500px;"/>
+
 ---
- 
+
 >*   Funcion mov()
     Es la funcionalidad del sistema donde se hace la lectura del archivo .mov y consecutivamente se realizan los cambios a el inventario anteriormente creado.
 <img src="https://i.ibb.co/dP2nVQc/code4.png" alt="funcion main" style="width:500px;"/>
+
 ---
+
 >*   Muchas gracias eso seria todo
     gracias por leer todo este documento tenga un buen dia aux.
 <img src="https://i.ibb.co/nB08qk2/1ac04daf-e3d7-4dbd-8c43-8877808ec602.jpg" alt="funcion main" style="width:100px;"/>

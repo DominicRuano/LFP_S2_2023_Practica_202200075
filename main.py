@@ -29,6 +29,7 @@ def get_inf():
         archivo.write(str(a[3]))
         archivo.write((19 - len(str(a[3]))) * " ")
         archivo.write("\n")
+    print("Informe creado con exito.")
 
 def get_mov():
     os.system("cls")
@@ -65,6 +66,8 @@ def get_mov():
                 else:
                     print("Error: el producto {} no existe en la ubicacion {}.".format(a[0], a[3]))
     archivo.close()
+    get_inf()
+    print(" Informacion actualizada e Informe creado con exito.")
 
 def get_inv():
     os.system("cls")
@@ -81,6 +84,8 @@ def get_inv():
         
         linea = archivo.readline().strip()
     archivo.close()
+    get_inf()
+    print(" Inventario creado e Informe creado con exito.")
 
 def get_path():
     path = filedialog.askopenfile(title="Select file",filetypes=(("inv files", ".inv"),("mov files", "mov"),("all files", ".*")))
